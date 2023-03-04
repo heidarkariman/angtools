@@ -3,55 +3,55 @@
   
       <!-- Tool ID Column -->
       <ng-container matColumnDef="tool_id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header="tool_id"> Tool ID </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="tool_id" (click)="sortData('tool_id')" > Tool ID </th>
         <td mat-cell *matCellDef="let element" > {{element.tool_id}} </td>
       </ng-container>
     
       <!-- Count Column -->
       <ng-container matColumnDef="count">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="count"> Count </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="count" (click)="sortData('count')" > Count </th>
         <td mat-cell *matCellDef="let element"> {{element.count}} </td>
       </ng-container>
   
       <!-- Time Column -->
       <ng-container matColumnDef="time">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="time"> Time </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="time" (click)="sortData('time')" > Time </th>
         <td mat-cell *matCellDef="let element"> {{element.time}} </td>
       </ng-container>
   
       <!-- First Column -->
       <ng-container matColumnDef="first">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="first"> First </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="first" (click)="sortData('first')" > First </th>
         <td mat-cell *matCellDef="let element"> {{element.first}} </td>
       </ng-container>
   
       <!-- Last Column -->
       <ng-container matColumnDef="last">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="last"> Last </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="last" (click)="sortData('last')" > Last </th>
         <td mat-cell *matCellDef="let element"> {{element.last}} </td>
       </ng-container>
   
       <!-- Cposmin Column -->
       <ng-container matColumnDef="cposmin">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="cposmin"> Cposmin </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="cposmin" (click)="sortData('cposmin')" > Cposmin </th>
         <td mat-cell *matCellDef="let element"> {{element.cposmin}} </td>
       </ng-container>
   
       <!-- Cposmax Column -->
       <ng-container matColumnDef="cposmax">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="cposmax"> Cposmax </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="cposmax" (click)="sortData('cposmax')" > Cposmax </th>
         <td mat-cell *matCellDef="let element"> {{element.cposmax}} </td>
       </ng-container>
   
       <!-- Uposmin Column -->
       <ng-container matColumnDef="uposmin">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="uposmin"> Uposmin </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="uposmin" (click)="sortData('uposmin')" > Uposmin </th>
         <td mat-cell *matCellDef="let element"> {{element.uposmin}} </td>
       </ng-container>
   
       <!-- Uposmax Column -->
       <ng-container matColumnDef="uposmax">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header="uposmax"> Uposmax </th>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="uposmax" (click)="sortData('uposmax')" > Uposmax </th>
         <td mat-cell *matCellDef="let element"> {{element.uposmax}} </td>
       </ng-container>
   

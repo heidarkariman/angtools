@@ -21,11 +21,11 @@ export class ToolsComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.sort.sortChange.subscribe(() => {
-      this.loadData();
-    });
-  }
+    sortData(sortColumn:string){
+      this.toolsService.getSortedTools(sortColumn).subscribe((tools) => {
+        this.tools = tools;
+      });
+    }
 
   loadData() {
     const sortDirection = this.sort.direction;
