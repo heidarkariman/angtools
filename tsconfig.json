@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": ["jquery"], 
     "paths": {
       "@app/*": ["src/app/*"]
     },
@@ -32,6 +33,7 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  
   
 }

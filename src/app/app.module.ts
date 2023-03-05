@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { ToolsComponent } from './tools/tools.component';
 import { ToolsService } from './tools.service';
 import { AppRoutingModule } from './app-routing.module';
+import { DiagramsComponent } from './diagrams/diagrams.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolsComponent
+    ToolsComponent,
+    DiagramsComponent
   ],
   imports: [
     BrowserModule,
