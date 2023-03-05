@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ViewChild,Inject } from '@angular/core';
+import { Tool } from '@app/tool.model';
+import { ToolsService } from '@app/tools.service';
 import { Chart } from 'chart.js/auto';
 
 @Component({
@@ -8,9 +10,19 @@ import { Chart } from 'chart.js/auto';
 })
 
 export class DiagramsComponent implements AfterViewInit {
-canvas : HTMLCanvasElement | undefined;
-ctx : any;
-  constructor() {}
+  constructor(private toolsService: ToolsService) { }
+  tools: Tool[] = [];
+  tool!: Tool; 
+  ngOnInit() {
+    this.toolsService.getTools().subscribe((tools) => {
+      this.tools = tools;
+      this.tool = tools[0];
+      console.log(this.tools);
+    });
+  }
+
+  canvas : HTMLCanvasElement | undefined;
+  ctx : any;
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -20,10 +32,10 @@ ctx : any;
           {
           type: 'pie',
           data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['count', 'cposmax', 'cposmin', 'time', 'uposmax', 'uposmin'],
             datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              label: '#',
+              data: [this.tool['count'], this.tool['cposmax'], this.tool['cposmin'], this.tool['time'], this.tool['uposmax'], this.tool['uposmin']],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -47,15 +59,15 @@ ctx : any;
             responsive: true,
             plugins: {
               legend: {
-                position: 'top',
+                position: 'chartArea',
               },
               title: {
                 display: true,
                 text: 'My Pie Chart'
-              }
+              },
             }
           }
         });
-    },10000);
+    },3000);
   }
 }
